@@ -143,7 +143,7 @@ const Navebar = () => {
           </div>
           <li className="transition-transform duration-200 hover:scale-105">
             <Link
-              className="font-Ovo text-lg"
+              className="font-Ovo text-lg dark:text-black"
               onClick={() => setIsOpen(false)}
               href="#top"
             >
@@ -152,7 +152,7 @@ const Navebar = () => {
           </li>
           <li className="transition-transform duration-200 hover:scale-105">
             <Link
-              className="font-Ovo text-lg"
+              className="font-Ovo text-lg dark:text-black"
               onClick={() => setIsOpen(false)}
               href="#about"
             >
@@ -162,7 +162,7 @@ const Navebar = () => {
 
           <li className="transition-transform duration-200 hover:scale-105">
             <Link
-              className="font-Ovo text-lg"
+              className="font-Ovo text-lg dark:text-black"
               onClick={() => setIsOpen(false)}
               href="#experience"
             >
@@ -171,7 +171,7 @@ const Navebar = () => {
           </li>
           <li className="transition-transform duration-200 hover:scale-105">
             <Link
-              className="font-Ovo text-lg"
+              className="font-Ovo text-lg dark:text-black"
               onClick={() => setIsOpen(false)}
               href="#projects"
             >
@@ -180,7 +180,7 @@ const Navebar = () => {
           </li>
           <li className="transition-transform duration-200 hover:scale-105">
             <Link
-              className="font-Ovo text-lg"
+              className="font-Ovo text-lg dark:text-black"
               onClick={() => setIsOpen(false)}
               href="#contact"
             >

@@ -17,7 +17,9 @@ const Footer = () => {
             height={35}
             className=" mx-auto mb-2 "
           />
-          <p className="font-Ovo text-lg">mohamedalaaelmenyawe404@gmail.com</p>
+          <p className="font-Ovo  text-[16px] md:text-lg">
+            mohamedalaaelmenyawe404@gmail.com
+          </p>
         </div>
       </div>
       <div className="border-t mt-10 mb-5  w-3/4 mx-auto text-gray-400" />

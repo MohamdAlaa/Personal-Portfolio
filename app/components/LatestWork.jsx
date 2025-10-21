@@ -38,7 +38,7 @@ const LatestWork = () => {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 3, // default (xl)
+    slidesToShow: 1, // Default for mobile (1px to 768px)
     slidesToScroll: 1,
     arrows: true,
     nextArrow: <SampleNextArrow />,
@@ -46,12 +46,18 @@ const LatestWork = () => {
 
     responsive: [
       {
-        breakpoint: 1280, // below xl
-        settings: { slidesToShow: 2 },
+        breakpoint: 3000, // For very large screens
+        settings: {
+          slidesToShow: 3, // ≥ 1024px
+          slidesToScroll: 1,
+        },
       },
       {
-        breakpoint: 768, // below md
-        settings: { slidesToShow: 1 },
+        breakpoint: 1024, // For screens below 1024px
+        settings: {
+          slidesToShow: 2, // 768px - 1024px
+          slidesToScroll: 1,
+        },
       },
     ],
   };
@@ -65,7 +71,7 @@ const LatestWork = () => {
         projects showcasing my expertise in front-end development.
       </p>
 
-      <div className="px-[16%]">
+      <div className="px-[16%] ">
         <Slider {...settings}>
           {MyProiects.map((project, index) => (
             <div key={index} className="p-4">
