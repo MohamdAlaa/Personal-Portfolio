@@ -95,7 +95,7 @@ const LatestWork = () => {
                 </div>
 
                 {/* Links Section */}
-                <div className="flex items-center justify-center gap-8  mb-4">
+                <div className="flex items-center justify-center gap-2 md:gap-4 lg:gap-8 mb-4">
                   <Link
                     target="_blank"
                     href={project.link}
