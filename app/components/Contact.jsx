@@ -8,7 +8,6 @@ const Contact = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending....");
-    console.log("Access Key:", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY);
     const formData = new FormData(event.target);
     formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY);
 
@@ -45,14 +44,14 @@ const Contact = () => {
       <form onSubmit={onSubmit} className="max-w-2xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10 mb-8">
           <input
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white  dark:bg-gray-800"
             type="text"
             placeholder="Enter Your Name"
             required
             name="name"
           />
           <input
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-gray-800"
             type="email"
             placeholder="Enter Your Email"
             required
@@ -60,7 +59,7 @@ const Contact = () => {
           />
         </div>
         <textarea
-          className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 resize-none"
+          className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 resize-none dark:bg-gray-800"
           rows={6}
           placeholder="Enter Your Message"
           required
