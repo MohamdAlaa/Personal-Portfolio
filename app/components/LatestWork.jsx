@@ -65,10 +65,7 @@ const LatestWork = () => {
     );
   } // prevent SSR flash
   return (
-    <div
-      id="projects"
-      className="w-full px-[10%] sm:px-[13%] py-10 scroll-m-20"
-    >
+    <div id="projects" className="w-full px-[1%] sm:px-[13%] py-10 scroll-m-20">
       <h4 className="text-lg text-center mb-2 font-Ovo">My portfolio</h4>
       <h2 className="text-5xl text-center font-Ovo">My latest work</h2>
       <p className="max-w-2xl mx-auto font-Ovo text-center mt-5 mb-12 text-lg text-gray-700 dark:text-gray-300">
