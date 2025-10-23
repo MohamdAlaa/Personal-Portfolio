@@ -39,7 +39,7 @@ const Header = () => {
           />
         </Link>
         <Link
-          href="/MohamedAlaa_FrontEndDeveloper_CV.pdf"
+          href="/CV_Mohamed Alaa.pdf"
           target="_blank"
           className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 hover:rotate-10 transition-transform duration-300"
           download

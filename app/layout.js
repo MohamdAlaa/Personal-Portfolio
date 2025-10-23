@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       <body className={`${outfit.variable} ${ovo.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
