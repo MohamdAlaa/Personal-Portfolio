@@ -19,9 +19,9 @@ const About = () => {
         </div>
         <div className="flex-1">
           <p className="mb-10 max-w-2xl font-Ovo text-lg text-center">
-            I am an experienced Frontend Developer with 3 years of professional
-            expertise in the field. Throughout my career, I have had the
-            privilege of collaborating with prestigious organizations,
+            I am an experienced Frontend Developer with over 2 years of
+            professional expertise in the field. Throughout my career, I have
+            had the privilege of collaborating with prestigious organizations,
             contributing to their success and growth through my skills and
             dedication to delivering high-quality web solutions.
           </p>
