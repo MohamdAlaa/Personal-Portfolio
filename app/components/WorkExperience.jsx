@@ -12,7 +12,7 @@ const WorkExperience = () => {
           {" "}
           <h3 className=" text-2xl font-Ovo flex flex-col xl:flex-row  items-center xl:gap-4   ">
             Front End Developer
-            <span className="text-lg text-gray-600">Dec 2024 - present</span>
+            <span className="text-lg text-gray-600">Dec 2024 - Aug 2025</span>
           </h3>
           <h4 className="text-lg font-Ovo  flex flex-col md:flex-row  items-center justify-center lg:justify-start ">
             Masa International Group
