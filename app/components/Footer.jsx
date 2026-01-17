@@ -24,7 +24,7 @@ const Footer = () => {
       </div>
       <div className="border-t mt-10 mb-5  w-3/4 mx-auto text-gray-400" />
       <div className="flex flex-col md:flex-row justify-around items-center  gap-6 mb-5">
-        <p>© 2025 Mohamed Alaa. All rights reserved</p>
+        <p>© {new Date().getFullYear()} Mohamed Alaa. All rights reserved</p>
         <div className="flex items-center gap-6 ">
           <Link
             className="hover:translate-x-1 duration-500 rounded-lg dark:bg-white"

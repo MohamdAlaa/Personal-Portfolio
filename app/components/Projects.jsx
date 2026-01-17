@@ -18,11 +18,23 @@ export const Technologies = [
 
 export const MyProiects = [
   {
+    //Resumind
+    id: 19,
+    color: "from-red-300 to-blue-300",
+    title: "Resumind",
+    desc: "Resumind is a modern web application that helps job seekers optimize their resumes by providing AI-powered analysis, ATS (Applicant Tracking System) compatibility scores, and actionable improvement suggestions tailored to specific job applications.",
+    img: "/21.webp",
+    link: "https://applicant-tracking-system-ten.vercel.app/",
+    github_url: "https://github.com/MohamdAlaa/Applicant-Tracking-System",
+    key_techs:
+      "React.js 19, React Router v7, Tailwind CSS, TypeScript, Zustand, Puter.js, React Dropzone",
+  },
+  {
     //CarePlus
     id: 18,
     color: "from-red-300 to-blue-300",
     title: "CarePlus",
-    desc: "a healthcare platform that streamlines patient registration, appointment scheduling, medical records, complex forms and SMS notifications for a seamless healthcare experience.",
+    desc: "A healthcare platform that streamlines patient registration, appointment scheduling, medical records, complex forms and SMS notifications for a seamless healthcare experience.",
     img: "/20.webp",
     link: "https://patient-management-system-psi.vercel.app/",
     github_url: "https://github.com/MohamdAlaa/Patient-Management-System",

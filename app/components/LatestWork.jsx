@@ -77,9 +77,9 @@ const LatestWork = () => {
         <Slider key={width} {...settings}>
           {MyProiects.map((project, index) => (
             <div key={index} className="p-4">
-              <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 relative h-[500px] flex flex-col  ">
+              <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-400 relative h-[750px] md:h-[600px] flex flex-col  ">
                 {/* Image Section */}
-                <div className="relative w-full h-48 flex-[3]">
+                <div className="relative w-full h-[50%] md:h-[40%]">
                   <Image
                     src={project.img}
                     alt={project.title}
@@ -88,75 +88,81 @@ const LatestWork = () => {
                   />
                 </div>
 
-                {/* Text Section */}
-                <div className="p-5 text-center flex-[3]">
-                  <p className="text-2xl mb-2 font-Ovo dark:text-black">
-                    {project.title}
-                  </p>
-                  <p className="text-gray-600 font-sans">{project.desc}</p>
-                </div>
+                <div className="flex flex-col items-center justify-between ">
+                  <div className="p-5 text-center ">
+                    <p className="text-2xl mb-2 font-Ovo dark:text-black">
+                      {project.title}
+                    </p>
+                    <p className="text-gray-600 font-sans">{project.desc}</p>
+                  </div>
 
-                {/* Links Section */}
-                <div className="flex items-center justify-center gap-2 md:gap-4 lg:gap-0 xl:gap-8 mb-4">
-                  <Link
-                    target="_blank"
-                    href={project.link}
-                    className="flex gap-0 items-center sm:gap-2"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="50"
-                      height="50"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="7"
-                      strokeLinecap="round"
-                      className="lucide lucide-external-link w-9 h-9 inline"
-                      aria-hidden="true"
+                  <div className="p-5 text-center ">
+                    <p className="text-gray-600 font-sans">
+                      <span className="text-black">Technologies: </span>
+                      {project.key_techs}
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 md:gap-4 lg:gap-0 xl:gap-8 mb-4">
+                    <Link
+                      target="_blank"
+                      href={project.link}
+                      className="flex gap-0 items-center sm:gap-2"
                     >
-                      <path
-                        d="M15 3h6v6"
-                        stroke="#000000"
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="50"
+                        height="50"
+                        viewBox="0 0 24 24"
                         fill="none"
-                        strokeWidth="2px"
-                      ></path>
-                      <path
-                        d="M10 14 21 3"
-                        stroke="#000000"
-                        fill="none"
-                        strokeWidth="2px"
-                      ></path>
-                      <path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                        stroke="#000000"
-                        fill="none"
-                        strokeWidth="2px"
-                      ></path>
-                    </svg>
-                    {project.link ? (
-                      <span className="dark:text-black">Live Demo</span>
-                    ) : (
-                      <span className="dark:text-black">Not Public</span>
-                    )}
-                  </Link>
-                  <Link
-                    target="_blank"
-                    href={project.github_url}
-                    className="flex items-center gap-1"
-                  >
-                    <Image
-                      src="/github.svg"
-                      alt="github"
-                      width={40}
-                      height={40}
-                    />
-                    {project.github_url ? (
-                      <span className="dark:text-black">Code</span>
-                    ) : (
-                      <span className="dark:text-black">Private Repo</span>
-                    )}
-                  </Link>
+                        stroke="currentColor"
+                        strokeWidth="7"
+                        strokeLinecap="round"
+                        className="lucide lucide-external-link w-9 h-9 inline"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M15 3h6v6"
+                          stroke="#000000"
+                          fill="none"
+                          strokeWidth="2px"
+                        ></path>
+                        <path
+                          d="M10 14 21 3"
+                          stroke="#000000"
+                          fill="none"
+                          strokeWidth="2px"
+                        ></path>
+                        <path
+                          d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                          stroke="#000000"
+                          fill="none"
+                          strokeWidth="2px"
+                        ></path>
+                      </svg>
+                      {project.link ? (
+                        <span className="dark:text-black">Live Demo</span>
+                      ) : (
+                        <span className="dark:text-black">Not Public</span>
+                      )}
+                    </Link>
+                    <Link
+                      target="_blank"
+                      href={project.github_url}
+                      className="flex items-center gap-1"
+                    >
+                      <Image
+                        src="/github.svg"
+                        alt="github"
+                        width={40}
+                        height={40}
+                      />
+                      {project.github_url ? (
+                        <span className="dark:text-black">Code</span>
+                      ) : (
+                        <span className="dark:text-black">Private Repo</span>
+                      )}
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
