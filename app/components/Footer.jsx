@@ -18,7 +18,7 @@ const Footer = () => {
             className=" mx-auto mb-2 "
           />
           <p className="font-Ovo  text-[16px] md:text-lg">
-            mohamedalaaelmenyawe404@gmail.com
+            mohamedalaa.connect@gmail.com
           </p>
         </div>
       </div>
