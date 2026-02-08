@@ -21,7 +21,7 @@ const Header = () => {
         Frontend Web Developer
       </h1>
       <p className="max-w-2xl mx-auto font-Ovo text-lg">
-        I am a Frontend Web Developer with over 2 years of professional
+        I am a Frontend Web Developer with nearly 3 years years of professional
         experience in multiple companies and freelance projects.
       </p>
       <div className="flex   items-center gap-4 ">
