@@ -1,13 +1,14 @@
 "use client";
-import Image from "next/image";
-import React, { useState, useEffect } from "react";
+
+import { useState } from "react";
+import Reveal from "./Reveal";
 
 const Contact = () => {
   const [result, setResult] = useState("");
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setResult("Sending....");
+    setResult("Sending…");
     const formData = new FormData(event.target);
     formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY);
 
@@ -18,71 +19,82 @@ const Contact = () => {
 
     const data = await response.json();
     if (data.success) {
-      setResult("Message sent successfully!");
-      setTimeout(() => {
-        setResult("");
-      }, 3000);
+      setResult("Message sent successfully.");
+      setTimeout(() => setResult(""), 3000);
       event.target.reset();
     } else {
-      setResult("Error");
+      setResult("Something went wrong. Please try again.");
     }
   };
-  return (
-    <div
-      id="contact"
-      className="relative w-full px-[16%] py-10 scroll-m-20 mt-5"
-    >
-      {/* decorative blurred background - placed behind content */}
-      <div className="bg-header absolute inset-0 -z-10 pointer-events-none " />
 
-      <h4 className="text-lg text-center mb-2 font-Ovo">Connect with me</h4>
-      <h2 className="text-5xl text-center font-Ovo">Professional Experience</h2>
-      <p className="max-w-2xl mx-auto font-Ovo text-center mt-5 mb-12 text-xl">
-        I'd love to hear from you! If you have any questions, comments or
-        feedback, please use the form below.
-      </p>
-      <form onSubmit={onSubmit} className="max-w-2xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10 mb-8">
-          <input
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white  dark:bg-gray-800"
-            type="text"
-            placeholder="Enter Your Name"
-            required
-            name="name"
-          />
-          <input
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-gray-800"
-            type="email"
-            placeholder="Enter Your Email"
-            required
-            name="email"
-          />
-        </div>
-        <textarea
-          className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 resize-none dark:bg-gray-800"
-          rows={6}
-          placeholder="Enter Your Message"
-          required
-          name="message"
-        ></textarea>
-        <button
-          className="px-10 py-3 border rounded-full bg-black text-white flex items-center gap-2  mx-auto cursor-pointer hover:scale-105 duration-400"
-          type="submit"
-        >
-          Send Message
-          <Image
-            src="/right-arrow-white.svg"
-            alt="arrow"
-            width={16}
-            height={16}
-            className="w-4"
-          />
-        </button>
-        <p className={`font-Ovo mt-4 text-center text-green-700 text-xl`}>
-          {result}
+  const fieldClass =
+    "w-full rounded-md border border-border bg-card px-4 py-3 text-base text-foreground outline-none transition-shadow focus:border-accent focus:shadow-[var(--soft-shadow)]";
+
+  return (
+    <section id="contact" className="section-shell">
+      <Reveal>
+        <p className="section-label">Connect</p>
+        <h2 className="section-title">Get in touch</h2>
+        <p className="section-lead">
+          Open to roles, freelance work, and collaboration. Send a note and
+          I&apos;ll get back to you.
         </p>
-      </form>
-    </div>
+      </Reveal>
+
+      <Reveal className="mt-12">
+        <form onSubmit={onSubmit} className="max-w-2xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <label className="block">
+              <span className="mb-2 block text-sm uppercase tracking-wider text-muted-foreground">
+                Name
+              </span>
+              <input
+                className={fieldClass}
+                type="text"
+                placeholder="Your name"
+                required
+                name="name"
+              />
+            </label>
+            <label className="block">
+              <span className="mb-2 block text-sm uppercase tracking-wider text-muted-foreground">
+                Email
+              </span>
+              <input
+                className={fieldClass}
+                type="email"
+                placeholder="you@example.com"
+                required
+                name="email"
+              />
+            </label>
+          </div>
+          <label className="mt-5 block">
+            <span className="mb-2 block text-sm uppercase tracking-wider text-muted-foreground">
+              Message
+            </span>
+            <textarea
+              className={`${fieldClass} resize-none`}
+              rows={6}
+              placeholder="How can I help?"
+              required
+              name="message"
+            />
+          </label>
+          <button
+            className="btn-live mt-6 inline-flex cursor-pointer items-center rounded-md bg-accent px-8 py-3.5 text-base font-medium text-accent-foreground soft-depth"
+            type="submit"
+          >
+            Send message
+          </button>
+          {result ? (
+            <p className="mt-4 text-base text-accent" role="status">
+              {result}
+            </p>
+          ) : null}
+        </form>
+      </Reveal>
+    </section>
   );
 };
 

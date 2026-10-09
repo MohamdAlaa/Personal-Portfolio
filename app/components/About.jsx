@@ -1,55 +1,58 @@
 import Image from "next/image";
-import React from "react";
-import { Technologies } from "./Projects";
+import { technologies } from "@/lib/portfolio-data";
+import Reveal from "./Reveal";
 
 const About = () => {
   return (
-    <div id="about" className="w-full px-[16%] py-10 scroll-m-20 ">
-      <h4 className="text-lg text-center mb-2 font-Ovo">Introduction</h4>
-      <h2 className="text-5xl text-center font-Ovo">About me</h2>
-      <div className="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
-        <div className=" w-64 sm:w-80 rounded-3xl max-w-none">
-          <Image
-            src="/me2.webp"
-            alt="user_image"
-            width={320}
-            height={650}
-            className="object-cover rounded-3xl w-full"
-          />
-        </div>
-        <div className="flex-1">
-          <p className="mb-10 max-w-2xl font-Ovo text-lg text-center">
-            I am an experienced Frontend Developer with nearly 3 years of
-            professional expertise in the field. Throughout my career, I have
-            had the privilege of collaborating with prestigious organizations,
-            contributing to their success and growth through my skills and
-            dedication to delivering high-quality web solutions.
-          </p>
-          <h4 className="my-6 text-gray-700 font-Ovo dark:text-gray-300">
-            Technologies and Tools
-          </h4>
-          <ul className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-y-3 gap-4">
-            {Technologies.map((tech, index) => (
-              <li
-                key={index}
-                className="flex flex-col items-center justify-center w-20 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-400 dark:bg-white"
-              >
-                <Image
-                  className="mt-1"
-                  src={tech.src}
-                  alt={tech.alt}
-                  width={50}
-                  height={50}
-                />
-                <span className="text-xs text-center dark:text-black">
-                  {tech.name}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <section id="about" className="section-shell">
+      <Reveal>
+        <p className="section-label">Introduction</p>
+        <h2 className="section-title">About</h2>
+        <p className="section-lead">
+          Frontend engineer with nearly 3 years of professional experience
+          shipping interfaces for product teams and freelance clients —
+          focusing on performance, accessibility, and maintainable UI systems.
+        </p>
+      </Reveal>
+
+      <div className="mt-14 grid gap-12 lg:grid-cols-[minmax(0,280px)_1fr] lg:gap-16 items-start">
+        <Reveal variant="left" delay={80}>
+          <div className="relative aspect-[3/4] w-full max-w-xs mx-auto lg:mx-0 overflow-hidden rounded-lg border border-border soft-depth">
+            <Image
+              src="/me.jpg"
+              alt="Mohamed Alaa"
+              fill
+              className="object-cover object-center transition-transform duration-700 ease-out hover:scale-105"
+              sizes="280px"
+            />
+          </div>
+        </Reveal>
+
+        <Reveal variant="right" delay={160}>
+          <div>
+            <h3 className="font-display text-3xl text-foreground mb-6">
+              Technologies & tools
+            </h3>
+            <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-3">
+              {technologies.map((tech, index) => (
+                <Reveal key={tech.name} delay={80 + index * 45} variant="scale">
+                  <li className="tech-chip flex items-center gap-3 rounded-md border border-transparent px-2 py-2 text-base hover:border-border hover:bg-card">
+                    <Image
+                      src={tech.src}
+                      alt=""
+                      width={22}
+                      height={22}
+                      className="shrink-0 dark:invert-[0.15]"
+                    />
+                    <span className="text-foreground">{tech.name}</span>
+                  </li>
+                </Reveal>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
       </div>
-    </div>
+    </section>
   );
 };
 

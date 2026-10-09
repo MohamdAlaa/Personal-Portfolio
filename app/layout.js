@@ -1,4 +1,4 @@
-import { Outfit, Ovo } from "next/font/google";
+import { Outfit, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/providers/ThemeProvider";
 
@@ -9,23 +9,25 @@ const outfit = Outfit({
   weight: ["400", "500", "600", "700"],
 });
 
-const ovo = Ovo({
+const instrument = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-ovo",
+  variable: "--font-instrument",
   display: "swap",
   weight: "400",
 });
 
 export const metadata = {
-  title: "Mohamed Alaa",
+  title: "Mohamed Alaa — Frontend Engineer",
   description:
-    "Mohamed Alaa - Frontend Developer | Showcasing Projects, Skills, and Experience",
+    "Mohamed Alaa — Frontend Engineer. Projects, skills, and experience building modern web interfaces.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className={`${outfit.variable} ${ovo.variable} antialiased`}>
+      <body
+        className={`${outfit.variable} ${instrument.variable} font-sans antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
