@@ -8,8 +8,8 @@ const WorkExperience = () => {
         <p className="section-label">Career</p>
         <h2 className="section-title">Experience</h2>
         <p className="section-lead">
-          Roles across product companies and freelance engagements, focused on
-          frontend delivery and collaboration.
+          Corporate and freelance roles delivering high-performance front-end
+          products with React, Next.js, Vue, and Nuxt.
         </p>
       </Reveal>
 
@@ -20,7 +20,7 @@ const WorkExperience = () => {
             delay={index * 90}
             variant="left"
           >
-            <li className="timeline-row grid gap-4 border-b border-border py-8 sm:grid-cols-[11rem_1fr] lg:grid-cols-[12rem_1fr_1.4fr] sm:gap-8 rounded-md px-2 -mx-2">
+            <li className="timeline-row grid gap-4 border-b border-border py-8 lg:grid-cols-[12rem_1fr] sm:gap-8 rounded-md px-2 -mx-2">
               <time className="text-base text-accent tabular-nums pt-1 font-medium">
                 {job.period}
               </time>
@@ -31,12 +31,27 @@ const WorkExperience = () => {
                 <p className="mt-1 text-base text-muted-foreground">
                   {job.company}
                   <span className="mx-2 text-border">·</span>
+                  {job.location}
+                  <span className="mx-2 text-border">·</span>
                   {job.type}
                 </p>
+                {job.stack ? (
+                  <p className="mt-2 text-sm text-accent/90">
+                    Tech stack: {job.stack}
+                  </p>
+                ) : null}
+                <ul className="mt-4 space-y-2.5 text-base sm:text-lg text-muted-foreground leading-relaxed">
+                  {job.bullets.map((bullet) => (
+                    <li key={bullet} className="flex gap-3">
+                      <span
+                        className="mt-[0.55em] size-1.5 shrink-0 rounded-full bg-accent"
+                        aria-hidden
+                      />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed sm:col-span-2 lg:col-span-1">
-                {job.description}
-              </p>
               <span className="sr-only">Role {index + 1}</span>
             </li>
           </Reveal>

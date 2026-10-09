@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { socialLinks } from "@/lib/portfolio-data";
+import { profile, socialLinks } from "@/lib/portfolio-data";
 
 const Header = () => {
   return (
@@ -12,13 +12,16 @@ const Header = () => {
       <div className="ambient-orb ambient-orb-b" aria-hidden />
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-5 sm:px-8 pt-28 pb-24">
-        <p className="animate-hero section-label">Mohamed Alaa</p>
+        <p className="animate-hero section-label">
+          {profile.name} · {profile.location}
+        </p>
         <h1 className="animate-hero animate-hero-delay-1 font-display text-6xl sm:text-7xl lg:text-8xl xl:text-9xl tracking-tight text-foreground max-w-4xl leading-[1.05]">
-          Frontend Engineer
+          {profile.title}
         </h1>
         <p className="animate-hero animate-hero-delay-2 mt-6 max-w-2xl text-lg sm:text-xl text-muted-foreground leading-relaxed">
-          Nearly 3 years building responsive interfaces, design systems, and
-          production web apps with React, Next.js, and Vue.
+          Engineering front-end solutions around real business needs—from
+          multi-tenant platforms to dashboards—where performance, clarity, and
+          long-term maintainability matter as much as the UI.
         </p>
 
         <div className="animate-hero animate-hero-delay-3 mt-10 flex flex-wrap items-center gap-4">

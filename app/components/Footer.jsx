@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { socialLinks } from "@/lib/portfolio-data";
+import { profile, socialLinks } from "@/lib/portfolio-data";
 
 const Footer = () => {
   return (
@@ -12,11 +12,14 @@ const Footer = () => {
             <span className="text-accent">.</span>
           </p>
           <a
-            href="mailto:mohamedalaa.connect@gmail.com"
+            href={`mailto:${profile.email}`}
             className="mt-2 block text-base text-muted-foreground transition-colors hover:text-accent"
           >
-            mohamedalaa.connect@gmail.com
+            {profile.email}
           </a>
+          <p className="mt-1 text-sm text-muted-foreground">
+            {profile.location}
+          </p>
           <p className="mt-4 text-sm text-muted-foreground">
             © {new Date().getFullYear()} Mohamed Alaa. All rights reserved.
           </p>

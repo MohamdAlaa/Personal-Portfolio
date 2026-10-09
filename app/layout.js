@@ -17,9 +17,9 @@ const instrument = Instrument_Serif({
 });
 
 export const metadata = {
-  title: "Mohamed Alaa — Frontend Engineer",
+  title: "Mohamed Alaa — Front-End Engineer",
   description:
-    "Mohamed Alaa — Frontend Engineer. Projects, skills, and experience building modern web interfaces.",
+    "Front-End Engineer in Cairo who designs scalable product interfaces around business needs—not just code.",
 };
 
 export default function RootLayout({ children }) {
