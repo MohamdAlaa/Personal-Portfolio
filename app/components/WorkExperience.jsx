@@ -8,8 +8,9 @@ const WorkExperience = () => {
         <p className="section-label">Career</p>
         <h2 className="section-title">Experience</h2>
         <p className="section-lead">
-          Corporate and freelance roles delivering high-performance front-end
-          products with React, Next.js, Vue, and Nuxt.
+          Experience shaped across different companies, products, and ways of
+          working—from corporate teams to freelance clients—each one deepening
+          how I engineer solutions for real business problems.
         </p>
       </Reveal>
 

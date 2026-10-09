@@ -17,6 +17,14 @@ const Footer = () => {
           >
             {profile.email}
           </a>
+          <a
+            href={`https://wa.me/${profile.phoneInternational}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 block text-base text-muted-foreground transition-colors hover:text-accent"
+          >
+            {profile.phone}
+          </a>
           <p className="mt-1 text-sm text-muted-foreground">
             {profile.location}
           </p>
@@ -30,8 +38,12 @@ const Footer = () => {
             <Link
               key={social.name}
               href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              target={social.href.startsWith("mailto:") ? undefined : "_blank"}
+              rel={
+                social.href.startsWith("mailto:")
+                  ? undefined
+                  : "noopener noreferrer"
+              }
               aria-label={social.name}
               className="social-pop rounded-md border border-border bg-background p-2 hover:border-accent"
             >

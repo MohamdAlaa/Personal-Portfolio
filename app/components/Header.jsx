@@ -52,8 +52,12 @@ const Header = () => {
             <Link
               key={social.name}
               href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              target={social.href.startsWith("mailto:") ? undefined : "_blank"}
+              rel={
+                social.href.startsWith("mailto:")
+                  ? undefined
+                  : "noopener noreferrer"
+              }
               aria-label={social.name}
               className="social-pop rounded-md border border-border bg-background/70 p-2 hover:border-accent"
             >
